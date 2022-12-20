@@ -16,12 +16,13 @@
     li{list-style:none;}
     label,input {margin:3px;}
     form{
-    background: grey;}
+    background:#FFEBCD;}
+    nav{background-color: #DEB887;}
   </style>
 </head>
 
 <body>
-    <nav class="bg-warning">
+    <nav>
         <div class="container">
             <a href="#" class="text-secondary fs-1 d-flex justify-content-center">Cris Pizza</a>
             <ul id="nav-bar">
