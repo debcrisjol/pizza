@@ -18,13 +18,14 @@
     form{
     background:#FFEBCD;}
     nav{background-color: #DEB887;}
+    .error {font-size:12px;}
   </style>
 </head>
 
 <body>
     <nav>
         <div class="container">
-            <a href="#" class="text-secondary fs-1 d-flex justify-content-center">Cris Pizza</a>
+            <a href="#" class="text-secondary fs-1 d-flex justify-content-center">The Best Pizzas</a>
             <ul id="nav-bar">
                 <li class="d-flex justify-content-end" ><a class="btn-danger m-2 btn fs-5 text-warning" href="#">Add a Pizza</a></li></ul>
         </div>
