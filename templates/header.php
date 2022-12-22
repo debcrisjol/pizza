@@ -10,23 +10,41 @@
   <!-- Bootstrap 5.2 css -->
   <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet'
     integrity='sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi' crossorigin='anonymous'>
-  <link rel='stylesheet' href='./style.css'>
+
   <style type="text/css">
-    a,ul{text-decoration:none;}
+    footer{background-color:aliceblue;
+    height:50px;
+    
+  }
+    .cardd img{width:110px;
+      position:absolute;
+      top:-30px;
+      border-radius: 50%;
+      
+      
+  }
+  .carddd{height:250px;}
+  .card,.carddd{position:relative;
+  margin-top:30%;}
+    * {font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+    body{ background-color: #FFEBCD;}
+    a,ul{text-decoration:none;
+    }
     li{list-style:none;}
-    label,input {margin:3px;}
+    label,input {margin:3px;
+    }
     form{
     background:#FFEBCD;}
     nav{background-color: #DEB887;}
-    .error {font-size:12px;}
+    .error {font-size:10px;}
   </style>
 </head>
 
 <body>
     <nav>
-        <div class="container">
-            <a href="#" class="text-secondary fs-1 d-flex justify-content-center">The Best Pizzas</a>
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.php" class="text-secondary fs-1">The Best Pizzas</a>
             <ul id="nav-bar">
-                <li class="d-flex justify-content-end" ><a class="btn-danger m-2 btn fs-5 text-warning" href="#">Add a Pizza</a></li></ul>
+                <li><a class="btn-danger mt-3 btn fs-5 text-warning" href="add.php">Add a Pizza</a></li></ul>
         </div>
     </nav>

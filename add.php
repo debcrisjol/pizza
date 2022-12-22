@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+	include('config/db_connect.php');
 
 	$email = $title = $ingredients = '';
 	$errors = array('email' => '', 'title' => '', 'ingredients' => '');
@@ -36,10 +38,25 @@
 		}
 
 		if(array_filter($errors)){
-			// echo 'errors in form';
+			//echo 'errors in form';
 		} else {
-			// echo 'form is valid';
-			header('Location: index.php');
+			// escape sql chars
+			$email = mysqli_real_escape_string($conn, $_POST['email']);
+			$title = mysqli_real_escape_string($conn, $_POST['title']);
+			$ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+
+			// create sql
+			$sql = "INSERT INTO pizzas(title,email,ingredients) VALUES('$title','$email','$ingredients')";
+
+			// save to db and check
+			if(mysqli_query($conn, $sql)){
+				// success
+				header('Location: index.php');
+			} else {
+				echo 'query error: '. mysqli_error($conn);
+			}
+
+			
 		}
 
 	} // end POST check
@@ -57,21 +74,21 @@
 <?php include('templates/header.php') ?>
 
 <section class="container text-secondary ">
-    <h4 class="text-center">Add a Pizza</h4>
-    <form class="d-flex flex-column justify-content-center align-items-center p-3 fs-5" action="add.php" method="POST">
-        <label>Your Email</label>
-        <input type="text" name="email" class="w-50" value="<?php echo $email ?> ">
-        <div class="error text-danger"><?php echo $errors['email']; ?></div>
-        <label>Pizza Title</label>
-        <input type="text" name="title" class="w-50" value="<?php echo $title ?> ">
-        <div class="error text-danger"><?php echo $errors['title']; ?></div>
-        <label>Ingredients (comma separated)</label>
-        <input type="text" name="ingredients" class="w-50" value="<?php echo $ingredients ?> ">
-        <div class="error text-danger"><?php echo $errors['ingredients']; ?></div>
-        <div class="text-center">
-            <input type="submit" name="submit" value="submit" class="m-3 btn bg-warning">
-        </div>
-    </form>
+	<h4 class="text-center">Add a Pizza</h4>
+	<form class="d-flex flex-column justify-content-center align-items-center p-3 fs-5" action="add.php" method="POST">
+		<label>Your Email</label>
+		<input type="text" name="email" class="w-50" value="<?php echo $email ?> ">
+		<div class="error text-danger"><?php echo $errors['email']; ?></div>
+		<label>Pizza Title</label>
+		<input type="text" name="title" class="w-50" value="<?php echo $title ?> ">
+		<div class="error text-danger"><?php echo $errors['title']; ?></div>
+		<label>Ingredients (comma separated)</label>
+		<input type="text" name="ingredients" class="w-50" value="<?php echo $ingredients ?> ">
+		<div class="error text-danger"><?php echo $errors['ingredients']; ?></div>
+		<div class="text-center">
+			<input type="submit" name="submit" value="submit" class="m-3 btn bg-warning">
+		</div>
+	</form>
 </section>
 
 <?php include('templates/footer.php'); ?>

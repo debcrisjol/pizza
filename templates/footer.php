@@ -5,8 +5,8 @@
 ?>
  
  
- <footer>
-    <div class="text-center bg-secondary">© Copyright 2022-Cris Pizza Ltd</div>
+ <footer class="d-flex justify-content-center align-items-center">
+    <div class="text-center m-4">© Copyright 2022-Cris Pizza Ltd</div>
  </footer>
  
  
