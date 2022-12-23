@@ -18,10 +18,17 @@
     bottom:0px;
     width:100%;
   }
+  .info{position:absolute;
+       bottom:0px;
+      width:100px;
+      margin-bottom:5px;
+    align-items: center;}
     .cardd img{width:110px;
       position:absolute;
       top:-30px;
       border-radius: 50%;
+
+      
       
       
   }

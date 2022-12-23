@@ -38,16 +38,17 @@ mysqli_close($conn);
             <div class="cardd card g-3 m-3 d-flex flex-column justify content-between align-items-center">
                 <img class="card-img-top" src="./templates/image/pizza.png" alt="Card image cap">
                 <div class="carddd card-body text-center ">
-                    <h5 class="card-title text-center text-danger"><?php echo $pizza['title']?></h5>
+                    <h5 class="card-title text-center text-danger m-2"><?php echo $pizza['title']?></h5>
                     <ul class="p-0">
                         <?php foreach(explode(',', $pizza['ingredients']) as $ing) :?>
                         <li><?php echo $ing ?></li>
 
                         <?php endforeach?>
                     </ul>
+    <div class="d-flex justify-content-center">
+                    <a href="details.php?id=<?php echo $pizza['id']?>" class="info btn btn-warning">More info</a>
+                </div></div>
 
-                    <a href="details.php?id=<?php echo $pizza['id']?>" class="d-flex justify-content-center btn btn-warning">More info</a>
-                </div>
                 
             </div>
         </div>
