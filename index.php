@@ -35,7 +35,7 @@ mysqli_close($conn);
     <div class="row">
         <?php foreach ($pizzas as $pizza) : ?>
         <div class=" col col-sm-6 col-md-3">
-            <div class="cardd card g-3 m-3 d-flex align-items-center">
+            <div class="cardd card g-3 m-3 d-flex flex-column justify content-between align-items-center">
                 <img class="card-img-top" src="./templates/image/pizza.png" alt="Card image cap">
                 <div class="carddd card-body text-center ">
                     <h5 class="card-title text-center text-danger"><?php echo $pizza['title']?></h5>

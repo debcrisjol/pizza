@@ -14,7 +14,9 @@
   <style type="text/css">
     footer{background-color:aliceblue;
     height:50px;
-    
+    position:fixed;
+    bottom:0px;
+    width:100%;
   }
     .cardd img{width:110px;
       position:absolute;
