@@ -43,7 +43,7 @@
 <html lang="en">
 
 <?php include('templates/header.php') ?>
-<div class="container text-center m-5">
+<div class="container text-center m-5 text-secondary">
 <?php if($pizza): ?>
 			<h4><?php echo $pizza['title']; ?></h4>
 			<p>Created by <?php echo $pizza['email']; ?></p>
@@ -54,7 +54,7 @@
 			<!-- DELETE FORM -->
 			<form action="details.php" method="POST">
 				<input type="hidden" name="id_to_delete" value="<?php echo $pizza['id']; ?>">
-				<input type="submit" name="delete" value="Delete" class="btn btn-warning">
+				<input type="submit" name="delete" value="Delete" class="btn btn-warning text-secondary">
 			</form>
 
 		<?php else: ?>
